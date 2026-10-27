@@ -46,7 +46,7 @@
     const note = a.closest("form, .s-contacts")?.parentElement?.querySelector("[data-s-copied]") || document.querySelector("[data-s-copied]");
     if (note) { note.hidden = false; setTimeout(() => (note.hidden = true), 4000); }
     const tg = body.dataset.tg; const user = isSlot(tg) ? "" : String(tg).replace(/^@|https?:\/\/t\.me\//g, "");
-    window.open("https://t.me/" + user, "_blank", "noopener");
+    window.open("https://t.me/" + user + "?text=" + encodeURIComponent(message), "_blank", "noopener");
   });
 
   // неразрывные пробелы: сумма не рвётся переносом
