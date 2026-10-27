@@ -1,0 +1,53 @@
+/* Доработки под владельца: поверх style-prod.css, цвета только из переменных палитры */
+.x-logo { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: 55% 30%; flex: none; border: 2px solid var(--c-accent); background: var(--c-surface); }
+.x-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 900px) { .x-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .x-cards { grid-template-columns: 1fr; } }
+.x-card { display: grid; grid-template-rows: auto auto 1fr; gap: 6px; text-decoration: none; color: inherit; background: var(--c-surface); border: 1px solid var(--hair); border-radius: var(--r); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.x-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0, 0, 0, .12); }
+.x-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.x-card__t { font: 700 1.05rem var(--f-display); padding: 10px 18px 0; }
+.x-card__d { color: var(--c-ink-soft); font-size: .92rem; padding: 0 18px 18px; }
+.x-two { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 16px; }
+.x-box { background: var(--c-surface); border: 1px solid var(--hair); border-radius: var(--r); padding: 24px; }
+.x-box h3 { font-size: 1.1rem; margin-bottom: 14px; }
+.x-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.x-tags li { background: var(--tint); border-radius: 999px; padding: 7px 14px; font-size: .9rem; font-weight: 600; }
+.x-slider { position: relative; }
+.x-slider__track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: var(--r); }
+.x-slider__track::-webkit-scrollbar { display: none; }
+.x-slide { flex: 0 0 calc((100% - 24px) / 3); margin: 0; scroll-snap-align: start; position: relative; }
+.x-slide img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); display: block; }
+.x-slide figcaption { position: absolute; left: 10px; bottom: 10px; background: rgba(0, 0, 0, .62); color: #fff; font-size: .82rem; font-weight: 600; padding: 5px 11px; border-radius: 999px; }
+.x-slider__btn { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--c-accent); color: var(--c-accent-ink); font: 700 1.7rem/1 var(--f-text); cursor: pointer; box-shadow: 0 4px 16px rgba(0, 0, 0, .35); }
+.x-slider__btn--prev { left: -12px; }
+.x-slider__btn--next { right: -12px; }
+@media (max-width: 760px) { .x-slide { flex-basis: 82%; } .x-slider__btn--prev { left: 4px; } .x-slider__btn--next { right: 4px; } }
+.x-set { margin-top: 40px; }
+.x-set h3 { font-size: 1.25rem; }
+.x-set p { color: var(--c-ink-soft); margin: 6px 0 16px; max-width: 46em; }
+.x-set__grid { display: grid; gap: 12px; }
+.x-set__grid--3 { grid-template-columns: repeat(3, 1fr); }
+.x-set__grid--4 { grid-template-columns: repeat(4, 1fr); }
+.x-set__grid figure { margin: 0; }
+.x-set__grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); display: block; }
+.x-set__grid figcaption { font-size: .82rem; color: var(--c-ink-soft); margin-top: 8px; }
+@media (max-width: 760px) { .x-set__grid--3, .x-set__grid--4 { grid-template-columns: 1fr 1fr; } }
+.x-gallery { grid-template-columns: repeat(3, 1fr); }
+.x-gallery img { aspect-ratio: 4 / 3; }
+.x-team { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px; align-items: stretch; }
+.x-team figure { margin: 0; }
+.x-team img { width: 100%; height: 100%; min-height: 200px; object-fit: cover; border-radius: var(--r); display: block; }
+.x-team .x-mascot img { object-fit: contain; background: #1b5d8f; }
+.s-promises:not(.x-jobs) { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .s-promises:not(.x-jobs) { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .s-promises:not(.x-jobs) { grid-template-columns: 1fr; } }
+.x-jobs { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+@media (max-width: 760px) {
+  .x-two { grid-template-columns: 1fr; }
+  .x-gallery { grid-template-columns: 1fr 1fr; }
+  .x-gallery figure:first-child { grid-column: auto; }
+  .x-gallery figure:first-child img { aspect-ratio: 4 / 3; }
+  .x-team { grid-template-columns: 1fr 1fr; }
+  .x-team .x-mascot { grid-column: 1 / -1; }
+}
